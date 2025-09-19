@@ -23,6 +23,3 @@ Welcome to our **ShoeKart E-commerce shop.** Shoekart is an E-commerce platform 
 -	**CSS:** For styling, including Flexbox for a responsive layout and smooth animations.
 -	**JavaScript:** For all interactive functionalities, including shopping cart logic and dynamic content updates
 ---
-🎯 **Backend**  
-- **Python (Django):** For backend logic, handling requests, building REST APIs, and connecting frontend with the database.  
-- **SQL (Database):** For storing and managing data such as products, users, carts, and orders securely.  
