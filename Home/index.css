@@ -145,7 +145,7 @@ nav {
     align-items: center;
     height: 500px;
     margin: 0 3px;
-    background: url("/asstes/banner/up-2.png") center/cover no-repeat;
+    background: url("asstes/banner/up-2.png") center/cover no-repeat;
     color: #b56523;
     text-align: center;
     padding: 20px;
@@ -160,7 +160,7 @@ nav {
     align-items: center;
     height: 300px;
     margin: 0 3px;
-    background: url("/asstes/banner/up-4.png") center/cover no-repeat;
+    background: url("asstes/banner/up-4.png") center/cover no-repeat;
     color: #b56523;
     text-align: center;
     padding: 20px;
