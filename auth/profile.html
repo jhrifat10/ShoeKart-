@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation with Side Slide Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar Styles */
+    .navbar {
+      background: #333;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-right a:hover {
+      background: #ff6600;
+    }
+
+    /* Side Slide Profile Styles */
+    .profile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .profile-overlay.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .profile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 380px;
+      height: 100%;
+      background: white;
+      box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+      z-index: 1001;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .profile-sidebar.active {
+      right: 0;
+    }
+
+    .profile-header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .profile-header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .close-profile {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .profile-content {
+      padding: 20px;
+    }
+
+    .user-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .user-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ff6600;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 15px;
+    }
+
+    .user-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .user-email {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .profile-menu {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .profile-menu li {
+      margin-bottom: 10px;
+    }
+
+    .profile-menu a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      color: #333;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .profile-menu a:hover {
+      background: #f0f0f0;
+    }
+
+    .profile-menu i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .logout-btn {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .logout-btn:hover {
+      background: #e55a00;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .profile-sidebar {
+        width: 100%;
+        right: -100%;
+      }
+
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .nav-right {
+        gap: 15px;
+      }
+
+      .nav-right a span.text {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-content {
+        padding: 15px;
+      }
+      
+      .nav-right a {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/" class="logo">MyStore</a>
+    </div>
+    <div class="nav-right">
+      <a href="/cart.html">
+        <span class="fa-solid fa-cart-shopping"></span>
+        <span class="text">Cart</span>
+      </a>
+      <a href="/auth/sign_in.html">
+        <span class="fa-solid fa-right-to-bracket"></span>
+        <span class="text">Sign In</span>
+      </a>
+      <a href="#" id="profileTrigger">
+        <i class="fa-solid fa-user"></i>
+        <span class="text">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Side Slide Profile -->
+  <div class="profile-overlay" id="profileOverlay"></div>
+  <div class="profile-sidebar" id="profileSidebar">
+    <div class="profile-header">
+      <h2>User Profile</h2>
+      <button class="close-profile" id="closeProfile">
+        <i class="fa-solid fa-times"></i>
+      </button>
+    </div>
+    <div class="profile-content">
+      <div class="user-info">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-name">John Doe</div>
+        <div class="user-email">john.doe@example.com</div>
+      </div>
+
+      <ul class="profile-menu">
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-user-edit"></i>
+            Edit Profile
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            Change Password
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-box"></i>
+            My Orders
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-heart"></i>
+            Wishlist
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-question-circle"></i>
+            Help & Support
+          </a>
+        </li>
+      </ul>
+
+      <button class="logout-btn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-section">
+      <h1>Welcome to Our Store</h1>
+      <p>Click on the profile icon in the navigation bar to open the side slide profile panel.</p>
+      <p>This implementation allows you to view and manage your profile without leaving the current page.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>How it works:</h2>
+      <ul>
+        <li>Click the profile icon in the top-right navigation</li>
+        <li>The profile panel slides in from the right</li>
+        <li>Click outside the panel or the close button to close it</li>
+        <li>All profile functionality is accessible without page reload</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const profileTrigger = document.getElementById('profileTrigger');
+      const profileOverlay = document.getElementById('profileOverlay');
+      const profileSidebar = document.getElementById('profileSidebar');
+      const closeProfile = document.getElementById('closeProfile');
+
+      // Open profile sidebar
+      profileTrigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        profileOverlay.classList.add('active');
+        profileSidebar.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+
+      // Close profile sidebar
+      function closeProfileSidebar() {
+        profileOverlay.classList.remove('active');
+        profileSidebar.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+
+      closeProfile.addEventListener('click', closeProfileSidebar);
+      profileOverlay.addEventListener('click', closeProfileSidebar);
+
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeProfileSidebar();
+        }
+      });
+
+      // Handle logout button
+      const logoutBtn = document.querySelector('.logout-btn');
+      logoutBtn.addEventListener('click', function() {
+        if (confirm('Are you sure you want to logout?')) {
+          alert('Logging out...');
+          // Add your logout logic here
+          closeProfileSidebar();
+        }
+      });
+
+      // Handle profile menu items
+      const profileMenuItems = document.querySelectorAll('.profile-menu a');
+      profileMenuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const menuText = this.textContent.trim();
+          alert(`You clicked: ${menuText}`);
+          // Add your specific functionality for each menu item here
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Pegasus 41 Shoes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: #111;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb .highlight {
+            color: #615fff;
+        }
+
+        /* Product Section */
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        /* Left side (images) */
+        .left-section {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumb {
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .thumb img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .thumb:hover {
+            border-color: #615fff;
+            transform: scale(1.05);
+        }
+
+        .main-image {
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 400px;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Right section */
+        .right-section {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .product-title {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 5px;
+        }
+
+        .star {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .star.filled {
+            color: #615fff;
+        }
+
+        .rating p {
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        /* Price section */
+        .price {
+            margin-top: 20px;
+        }
+
+        .price .old {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .price .new {
+            font-size: 22px;
+            font-weight: 600;
+            color: #111;
+        }
+
+        .tax-note {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* About */
+        .about-title {
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .about-list {
+            margin-left: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .about-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn.add {
+            background-color: #e5e7eb;
+            color: #333;
+        }
+
+        .btn.add:hover {
+            background-color: #d1d5db;
+        }
+
+        .btn.buy {
+            background-color: #615fff;
+            color: white;
+        }
+
+        .btn.buy:hover {
+            background-color: #4f4cd1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="breadcrumb">
+            <span>Home</span> /
+            <span> Products</span> /
+            <span> Sports</span> /
+            <span class="highlight"> Nike Pegasus 41 shoes</span>
+        </p>
+
+        <div class="product-section">
+            <div class="left-section">
+                <div class="thumbs">
+                    <div class="thumb"><img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage.png" alt="Thumbnail 1"></div>
+                    <div class="thumb"><img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage2.png" alt="Thumbnail 2"></div>
+                    <div class="thumb"><img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage3.png" alt="Thumbnail 3"></div>
+                    <div class="thumb"><img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage4.png" alt="Thumbnail 4"></div>
+                </div>
+
+                <div class="main-image">
+                    <img id="mainImage" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage.png" alt="Main Product Image">
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h1 class="product-title">Nike Pegasus 41 shoes</h1>
+
+                <div class="rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">★</span>
+                    <p>(4)</p>
+                </div>
+
+                <div class="price">
+                    <p class="old">MRP: $189</p>
+                    <p class="new">MRP: $159</p>
+                    <span class="tax-note">(inclusive of all taxes)</span>
+                </div>
+
+                <p class="about-title">About Product</p>
+                <ul class="about-list">
+                    <li>High-quality material</li>
+                    <li>Comfortable for everyday use</li>
+                    <li>Available in different sizes</li>
+                </ul>
+
+                <div class="buttons">
+                    <button class="btn add">Add to Cart</button>
+                    <button class="btn buy">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 🖼️ Thumbnail click → main image change
+        const thumbnails = document.querySelectorAll('.thumb img');
+        const mainImage = document.getElementById('mainImage');
+
+        thumbnails.forEach(img => {
+            img.addEventListener('click', () => {
+                mainImage.src = img.src;
+            });
+        });
+    </script>
+</body>
+</html>

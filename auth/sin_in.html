@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-box {
+      display: flex;
+      width: 800px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Left side */
+    .left {
+      flex: 1;
+      padding: 40px;
+      background: #fafafa;
+    }
+
+    .left h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .left ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .left ul li {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .left ul li::before {
+      content: "✔ ";
+      color:black;
+    }
+
+    /* Right side */
+    .right {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .right h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    .or {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .social button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .social button:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <!-- Left Side -->
+      <div class="left">
+        <h2>Discover all the benefits</h2>
+        <ul>
+          <li>Stay up to date with the latest news</li>
+          <li>Buy faster</li>
+          <li>Save your favorite products</li>
+        </ul>
+      </div>
+
+      <!-- Right Side -->
+      <div class="right">
+        <h2>Login or create your account</h2>
+        <p>Continue with your phone number</p>
+        <div class="input-box">
+          <input type="text" placeholder="Phone Number *">
+        </div>
+        <button class="btn">Proceed</button>
+
+        <div class="or">─── Or ───</div>
+
+        <div class="social">
+          <button>Facebook</button>
+          <button>Google</button>
+        </div>
+        
+        <!-- Register Link -->
+        <div class="register-link">
+          <p>Don't have an account? <a href="register.html">Register</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

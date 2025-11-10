@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e3eeff, #f5f7fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      width: 400px;
+      background: #fff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: black;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 40px;
+      border: 1.5px solid #ccc;
+      border-radius: 10px;
+      background: #fafafa;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: black;
+      outline: none;
+      background: #fff;
+    }
+
+    .input-group small {
+      color: red;
+      display: none;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* Password field with show icon */
+    .input-group.password-group {
+      position: relative;
+    }
+
+    .input-group.password-group .show-pass {
+      position: absolute;
+      top: 50%;
+      right: 12px; /* perfectly on right side */
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: black;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #000;
+      box-shadow: none;
+      transform: none;
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        width: 90%;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form id="regForm">
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" id="FullName" placeholder="Full Name" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" id="Phone" placeholder="01XXXXXXXXX" maxlength="11" required>
+        <small id="phoneError">Enter valid 11-digit number</small>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-calendar"></i>
+        <input type="date" id="BirthDate" required>
+      </div>
+
+      <div class="input-group password-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="Password" placeholder="Password" required>
+        <i class="fa fa-eye show-pass" onclick="togglePass()"></i>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    // Password show/hide toggle
+    function togglePass() {
+      const pass = document.getElementById("Password");
+      const icon = document.querySelector(".show-pass");
+      if (pass.type === "password") {
+        pass.type = "text";
+        icon.classList.replace("fa-eye", "fa-eye-slash");
+      } else {
+        pass.type = "password";
+        icon.classList.replace("fa-eye-slash", "fa-eye");
+      }
+    }
+
+    // Phone validation
+    const phone = document.getElementById("Phone");
+    const error = document.getElementById("phoneError");
+
+    phone.addEventListener("input", () => {
+      if (phone.value.length !== 11 || isNaN(phone.value)) {
+        error.style.display = "block";
+      } else {
+        error.style.display = "none";
+      }
+    });
+
+    // Submit alert
+    const form = document.getElementById("regForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (error.style.display === "none") {
+        alert("🎉 Registration Successful!");
+        form.reset();
+      } else {
+        alert("⚠️ Please fix the errors before submitting!");
+      }
+    });
+  </script>
+</body>
+</html>

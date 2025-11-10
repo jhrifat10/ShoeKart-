@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Home/index.css">
+    <link rel="stylesheet" href="/products/products.css">
+</head>
+<body>
+<div class="profile-overlay" id="profileOverlay"></div>
+<div class="profile-sidebar" id="profileSidebar">
+  <header>
+    <nav>
+      <div class="nav-left">
+        <img src="/asstes/icons/download.png" alt="ShoeKarT Logo" class="logo" style="height:100px; width:auto;">
+
+        <ul>
+          <li><a href="#"> Mega Deals</a></li>
+          <li><a href="/products/man/">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="/products/man.html">kids</a></li>
+          <li><a href="#">sports</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Accessories</a></li>
+
+        </ul>
+      </div>
+      <!-- Search Form -->
+      <form class="search-form" onsubmit="return false;">
+        <input type="text" placeholder="Search products...">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+
+      <!-- Font Awesome CDN (add inside <head>) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+      <div class="nav-right">
+        <a href="/auth/login.html"><span class="fa-solid fa-cart-shopping"></span></a>
+        <a href="/auth/sin_in.html">Sign In</a>
+        <!-- <a href="/auth/profile.html"><i class="fa-solid fa-user"></i></a>  -->
+             <a href="#" id="profileTrigger"><i class="fa-solid fa-user"></i></a>
+
+
+      </div>
+    </nav>
+  </header>
+
+
+    
+    <section class="categories">
+        <div class="category">
+          <a href="/products/sports/pd_serial_html/p_1.html">
+            <img src="/products/sports/pd_img/p_1.jpg" alt="Air Jordan 4 White">
+            <h4>MINDFUL GREY</h4>
+            <p>MOONBEAM and Sea Salt</p><br>
+            <span class="new-price">Tk4,999</span>
+            <span class="old-price">Tk5,999</span>
+            <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>  </a>
+        </div>
+
+        <div class="category">
+          <a href="/products/sports/pd_serial_html/p_2.html"> 
+            <img src="/products/sports/pd_img/p_2.jpg" alt="Women's Shoes">
+            <h3>Women's Collection</h3>
+            <p>Trendy shoes for women</p><br>
+            <span class="new-price">Tk5,490</span>
+            <span class="old-price">Tk6,490</span>
+            <button onclick="addToCart('Women\'s Collection')">Add to Cart</button></a>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_3.jpg" alt="Kids' Shoes">
+            <h3>Kids' Collection</h3>
+            <p>Comfortable shoes for kids</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Kids\' Collection')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p__4.jpg" alt="Accessories">
+            <h3>Accessories</h3>
+            <p>Bags, socks & more</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Accessories')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_5.jpg" alt="Girls Kids Sandal">
+            <h4>GIRLS KIDS SANDAL</h4>
+            <p>GIRLS KIDS SANDAL</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Girls Kids Sandal')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_6.jpg" alt="Air Jordan 4">
+            <h4>Air Jordan 4</h4>
+            <p>Rubber outsole & lace-up closure sneakers</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Air Jordan 4')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_7.jpg" alt="Lacoste">
+            <h4>Lacoste || Color – Black & White</h4>
+            <p>Perfect sportswear collection for trainers, walking, running</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Lacoste Black & White')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_8.jpg" alt="Air Jordan 4 White">
+            <h4>Air Jordan 4 || Color – White</h4>
+            <p>Exclusive & stylish, perfect for casual outdoor</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_9.jpg" alt="Air Jordan 4 White">
+            <h4>Air || Color – White</h4>
+            <p>Exclusive & stylish, perfect for casual outdoor, running or sports sneakers</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_10.jpg" alt="Men's Shoes">
+            <h3>Men's Collection</h3>
+            <p>Stylish shoes for men</p><br><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Men\'s Collection')">Add to Cart</button>
+        </div>
+
+        <div class="category">
+            <img src="/products/sports/pd_img/p_11.jpg" alt="Air Jordan 4 White">
+            <h4>Air Jordan 6 || Colour - White || Low Neck || </h4>
+            <p>Trendy and stylish</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3999</span>
+            <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+        </div>
+        <div class="category">
+            <img src="/products/sports/pd_img/p_12.jpg" alt="Air Jordan 4 White">
+            <h4>Air Jordan 4 || Color - Red || High Neck || </h4>
+            <p>Comfortable & fashionable</p><br>
+            <span class="new-price">Tk3499</span>
+            <span class="old-price">Tk3899</span>
+            <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+        </div>
+      
+
+    </section>
+
+
+
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <h3>About Us</h3>
+        <p>Careers</p>
+        <p>Recognition</p>
+        <p>Investors</p>
+        <p>Shoe Category</p>
+      </div>
+      <div>
+        <h3>Terms & Conditions</h3>
+        <p>Payment Options</p>
+        <p>Privacy Policy</p>
+        <p>Franchise Programme</p>
+        <p>Coverage Areas</p>
+      </div>
+      <div>
+        <h3>Brands</h3>
+        <p>Newbalance</p>
+        <p>Trekntread</p>
+        <p>Aarong</p>
+        <p>Walkarfootwear</p>
+        <p>North Star</p>
+      </div>
+      <div>
+        <h3>Help</h3>
+        <p>ShoeKarT</p>
+        <p>ShoeKarT Stores</p>
+        <p>Contact Info</p>
+        <p>Report Issue</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>ShoeKarT Company Bangladesh Ltd.</p>
+        <p>Baridara, Dhaka, Bangladesh</p>
+        <p>Call us: 01888313260</p>
+        <p>Email: jhrifat10@.com</p>
+      </div>
+    </div>
+    <hr style="margin:20px 0; border:0.5px solid #333;">
+    <div class="footer-bottom">
+      <p> ShoekarT Company Bangladesh Ltd.
+       <i class="fab fa-square-whatsapp"></i>
+      <i class="fab fa-facebook social-icon"></i>
+        <i class="fab fa-facebook-messenger social-icon"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-linkedin"></i> 
+        <i class="fa-solid fa-envelope"></i>
+      </p>
+      <div>
+        <img src="https://i.postimg.cc/pT8gbZqM/download-1.png" alt="Bkash">
+        <img src="https://i.postimg.cc/Znx205Gf/download-2.png" alt="Nagad">
+        <img src="https://i.postimg.cc/CxQtRt2V/download.jpg" alt="Rocket">
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

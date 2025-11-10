@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeKarT</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="profile-overlay" id="profileOverlay"></div>
+<div class="profile-sidebar" id="profileSidebar">
+  <header>
+    <nav>
+      <div class="nav-left">
+        <img src="/asstes/icons/download.png" alt="ShoeKarT Logo" class="logo" style="height:100px; width:auto;">
+
+        <ul>
+          <li><a href="/products/Mega Deals/all_html.html"> Mega Deals</a></li>
+          <li><a href="/products/man/all_html.html">Men</a></li>
+          <li><a href="/products/Women/all_together_html.html">Women</a></li>
+          <li><a href="/products/kids/all_together_html.html">kids</a></li>
+          <li><a href="/products/sports/all_together_html.html">sports</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="/products/Accessories/all_together_html.html">Accessories</a></li>
+          <li><a href="/auth/contract.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Search Form -->
+      <form class="search-form" onsubmit="return false;">
+        <input type="text" placeholder="Search products...">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+
+      <!-- Font Awesome CDN (add inside <head>) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+      <div class="nav-right">
+        <a href="/auth/login.html"><span class="fa-solid fa-cart-shopping"></span></a>
+        <a href="/auth/sin_in.html">Sign In</a>
+        <!-- <a href="/auth/profile.html"><i class="fa-solid fa-user"></i></a>  -->
+             <a href="#" id="profileTrigger"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="promo"></section>
+
+  <!--category -->
+  <section class="shop-sections">
+    <div class="card">
+      <a href="/products/man/all_html.html">  
+      <img src="/asstes/category-6/ca7.png" alt="Men Collection">  
+      </a>
+      <div class="card-overlay">
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="#">  
+      <img src="/asstes/category-6/ca2.png" alt="Women Collection">
+      </a>
+      <div class="card-overlay">
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="#"> 
+      <img src="/asstes/category-6/ca3.png" alt="Upcoming">
+       </a>
+      <div class="card-overlay">
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="#"> 
+      <img src="/asstes/category-6/ca8.png" alt="Accessories">
+      </a>
+      <div class="card-overlay">
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="#"> 
+      <img src="/asstes/category-6/ca11.png" alt="Travel">
+      </a>
+      <div class="card-overlay">
+        <h3>TRAVEL MATES</h3>
+        <p>Luggage & essentials</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="#">  
+      <img src="/asstes/category-6/ca4.gif" alt="Appointment">
+      </a>
+      <div class="card-overlay">
+        <h3>APPOINTMENT</h3>
+        <p>01904446070</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="categories">
+    <div class="category">
+      <a href="/products/man/pd_serial_html/pd_no-1.html"> 
+      <img src="/products/man/pd_img/p-2.jpg" alt="Air Jordan 4 White">
+      <h7>Mindful Grey </h7>
+      <p>Moonbeam and Sea Salt</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button> </a>
+    </div>
+
+    <div class="category">
+      <img src="https://www.batabd.com/cdn/shop/files/6313196_2_300x.jpg?v=1756803275" alt="Women's Shoes">
+      <h7>Women's Collection</h7>
+      <p>Trendy shoes for women</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Women\'s Collection')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://www.batabd.com/cdn/shop/files/0315103_1_1024x1024.jpg?v=1756785469" alt="Kids' Shoes">
+      <h7>Kids Collection</h7>
+      <p>Comfortable shoes for kids</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Kids\' Collection')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://retailbd.com/wp-content/uploads/2022/09/R1004-2-400x400.webp" alt="Accessories">
+      <h7>Bags</h7>
+      <p> Soft leather bag</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Accessories')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://www.batabd.com/cdn/shop/files/3618950_2_300x.jpg?v=1756786785" alt="Girls Kids Sandal">
+      <h7>Girls Kids Sandal</h7>
+      <p>Girls Kids Sandal</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Girls Kids Sandal')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://i.postimg.cc/Gm1bS4Qf/photo-2024-08-12-10-33-27.jpg" alt="Air Jordan 4">
+      <h7>Air Jordan 4</h7>
+      <p>Rubber outsole</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Air Jordan 4')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://i.postimg.cc/Hsmp6J3h/photo-2024-07-09-10-43-32.jpg" alt="Lacoste">
+      <h7>Lacoste </h7>
+      <p>Perfect sportswear collection </p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Lacoste Black & White')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://i.postimg.cc/hvBqZw8d/photo-2024-08-12-10-17-16.jpg" alt="Air Jordan 4 White">
+      <h7>Air Jordan 4 </h7>
+      <p>Exclusive & stylish</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://i.postimg.cc/4NRTZw23/photo-2024-10-07-12-11-56.jpgg" alt="Air Jordan 4 White">
+      <h7>Air Color – White</h7>
+      <p>Running or sports sneakers</p><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Air Jordan 4 White')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <img src="https://trekntread.com/tenancy/assets/1066/photo_2024-07-06_09-30-13.jpg" alt="Men's Shoes">
+      <h7>Men's Collection</h7>
+      <p>Stylish shoes for men</p><br><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Men\'s Collection')">Add to Cart</button>
+    </div>
+    <div class="category">
+      <a href="/products/sports/all_together_html.html"> 
+      <img src="https://trekntread.com/tenancy/assets/1066/photo_2024-07-06_09-30-13.jpg" alt="Men's Shoes">
+      <h7>Men's Collection</h7>
+      <p>Stylish shoes for men</p><br><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Men\'s Collection')">Add to Cart</button> </a>
+    </div>
+    <div class="category">
+      <img src="https://trekntread.com/tenancy/assets/1066/photo_2024-07-06_09-30-13.jpg" alt="Men's Shoes">
+      <h7>Men's Collection</h7>
+      <p>Stylish shoes for men</p><br><br>
+      <span class="new-price">Tk 3499</span>
+      <span class="old-price">Tk 3999</span>
+      <button onclick="addToCart('Men\'s Collection')">Add to Cart</button> 
+    </div>
+
+
+  </section>
+
+  <p style="text-align:center; font-size:36px;font-family:Comic Sans MS; font-weight:bold;">Special Categories</p>
+
+  <!-- special 4 categorys canva download 675-675px-->
+  <section class="shop-sections2">
+
+    <div class="card2">
+      <img src="/asstes/special_4_catagiry/sp-3.png" alt="Men Collection">
+      <div class="card-overlay">
+        <h3>MEN’S COLLECTION</h3>
+        <p>Exclusive shoes for men</p>
+      </div>
+    </div>
+
+    <div class="card2">
+      <img src="/asstes/special_4_catagiry/sp-4.png" alt="Women Collection">
+      <div class="card-overlay">
+        <h3>WOMEN’S COLLECTION</h3>
+        <p>Trendy fashion for women</p>
+      </div>
+    </div>
+
+    <div class="card2">
+      <a href="/products/sports/all_together_html.html"> 
+      <img src="/asstes/special_4_catagiry/sp-2.png" alt="Upcoming">
+      <div class="card-overlay">
+        <h3>UPCOMING</h3>
+        <p>New arrivals coming soon</p>
+      </div> </a>
+    </div>
+
+    <div class="card2">
+      <img src="/asstes/special_4_catagiry/sp-1.png" alt="Accessories">
+      <div class="card-overlay">
+        <h3>ACCESSORIES</h3>
+        <p>Backpacks & wallets</p>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Banner 2 -->
+  <section class="promo-2"></section>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <h3>About Us</h3>
+        <p>Careers</p>
+        <p>Recognition</p>
+        <p>Investors</p>
+        <p>Shoe Category</p>
+      </div>
+      <div>
+        <h3>Terms & Conditions</h3>
+        <p>Payment Options</p>
+        <p>Privacy Policy</p>
+        <p>Franchise Programme</p>
+        <p>Coverage Areas</p>
+      </div>
+      <div>
+        <h3>Brands</h3>
+        <p>Newbalance</p>
+        <p>Trekntread</p>
+        <p>Aarong</p>
+        <p>Walkarfootwear</p>
+        <p>North Star</p>
+      </div>
+      <div>
+        <h3>Help</h3>
+        <p>ShoeKarT</p>
+        <p>ShoeKarT Stores</p>
+        <p>Contact Info</p>
+        <p>Report Issue</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>ShoekarT Company Bangladesh Ltd.</p>
+        <p>North Badda, Dhaka, Bangladesh</p>
+        <p>Call us: 01888313260</p>
+        <p>Email: jhrifat10@.com</p>
+      </div>
+    </div>
+    <hr style="margin:20px 0; border:0.5px solid #333;">
+    <div class="footer-bottom">
+      <p> ShoekarT Company Bangladesh Ltd.
+       <i class="fab fa-square-whatsapp"></i>
+      <i class="fab fa-facebook social-icon"></i>
+        <i class="fab fa-facebook-messenger social-icon"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-linkedin"></i> 
+        <i class="fa-solid fa-envelope"></i>
+      </p>
+      <div>
+        <img src="https://i.postimg.cc/pT8gbZqM/download-1.png" alt="Bkash">
+        <img src="https://i.postimg.cc/Znx205Gf/download-2.png" alt="Nagad">
+        <img src="https://i.postimg.cc/CxQtRt2V/download.jpg" alt="Rocket">
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const cart = [];
+    function addToCart(item) {
+      cart.push(item);
+      alert(item + " added to cart!");
+      console.log("Cart:", cart);
+    }
+
+    console.log("Welcome to ShoeKarT!");
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
+
