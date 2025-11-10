@@ -480,3 +480,90 @@ a {
 a i {
   margin-right: 5px;
 }
+
+/* ================================ */
+/* 📱 MOBILE: 2 products per row */
+/* ================================ */
+@media screen and (max-width: 480px) {
+
+  /* Categories Section */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .category {
+    min-width: auto;
+    width: 100%;
+    max-width: none;
+    padding: 10px;
+  }
+
+  .category img {
+    height: 140px;
+    object-fit: cover;
+  }
+
+  .category h3,
+  .category h4,
+  .category p {
+    font-size: 13px;
+  }
+
+  .category button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* Shop Sections */
+  .shop-sections,
+  .shop-sections2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card,
+  .card2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .card img,
+  .card2 img {
+    height: 140px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* Hero / Promo Banner */
+  .promo,
+  .promo-2 {
+    height: 250px; 
+    padding: 15px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .promo h1 {
+    font-size: 24px;
+  }
+
+  .promo p {
+    font-size: 14px; 
+    max-width: 90%; 
+  }
+
+  .promo-2 h1 {
+    font-size: 20px;
+  }
+
+  .promo-2 p {
+    font-size: 13px;
+  }
+}
