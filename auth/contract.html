@@ -8,6 +8,7 @@
   <!-- Google Font & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="Home/index.css">
 
   <style>
     :root {
@@ -167,6 +168,44 @@
 </head>
 
 <body>
+  
+  <div class="profile-overlay" id="profileOverlay"></div>
+  <div class="profile-sidebar" id="profileSidebar">
+    <header>
+      <nav>
+        <div class="nav-left">
+          <img src="asstes/icons/download.png" alt="ShoeKarT Logo" class="logo" style="height:100px; width:auto;">
+
+          <ul>
+            <li><a href="products/Mega Deals/all_html.html"> Mega Deals</a></li>
+            <li><a href="products/man/all_html.html">Men</a></li>
+            <li><a href="products/Women/all_together_html.html">Women</a></li>
+            <li><a href="products/kids/all_together_html.html">kids</a></li>
+            <li><a href="products/sports/all_together_html.html ">sports</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="products/Accessories/all_together_html.html">Accessories</a></li>
+            <li><a href="auth/contract.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Search Form -->
+        <form class="search-form" onsubmit="return false;">
+          <input type="text" placeholder="Search products...">
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <!-- Font Awesome CDN (add inside <head>) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+        <div class="nav-right">
+          <a href="auth/login.html"><span class="fa-solid fa-cart-shopping"></span></a>
+          <a href="auth/sin_in.html">Sign In</a>
+          <!-- <a href="/auth/profile.html"><i class="fa-solid fa-user"></i></a>  -->
+          <a href="#" id="profileTrigger"><i class="fa-solid fa-user"></i></a>
+        </div>
+      </nav>
+    </header>
 
   <div class="container">
     <div class="contact-info">
@@ -200,6 +239,65 @@
       </form>
     </div>
   </div>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h3>About Us</h3>
+          <p>Careers</p>
+          <p>Recognition</p>
+          <p>Investors</p>
+          <p>Shoe Category</p>
+        </div>
+        <div>
+          <h3>Terms & Conditions</h3>
+          <p>Payment Options</p>
+          <p>Privacy Policy</p>
+          <p>Franchise Programme</p>
+          <p>Coverage Areas</p>
+        </div>
+        <div>
+          <h3>Brands</h3>
+          <p>Newbalance</p>
+          <p>Trekntread</p>
+          <p>Aarong</p>
+          <p>Walkarfootwear</p>
+          <p>North Star</p>
+        </div>
+        <div>
+          <h3>Help</h3>
+          <p>ShoeKarT</p>
+          <p>ShoeKarT Stores</p>
+          <p>Contact Info</p>
+          <p>Report Issue</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>ShoekarT Company Bangladesh Ltd.</p>
+          <p>North Badda, Dhaka, Bangladesh</p>
+          <p>Call us: 01888313260</p>
+          <p>Email: jhrifat10@.com</p>
+        </div>
+      </div>
+      <hr style="margin:20px 0; border:0.5px solid #333;">
+      <div class="footer-bottom">
+        <p> ShoekarT Company Bangladesh Ltd.
+          <i class="fab fa-square-whatsapp"></i>
+          <i class="fab fa-facebook social-icon"></i>
+          <i class="fab fa-facebook-messenger social-icon"></i>
+          <i class="fa-brands fa-square-instagram"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-solid fa-envelope"></i>
+        </p>
+        <div>
+          <img src="https://i.postimg.cc/pT8gbZqM/download-1.png" alt="Bkash">
+          <img src="https://i.postimg.cc/Znx205Gf/download-2.png" alt="Nagad">
+          <img src="https://i.postimg.cc/CxQtRt2V/download.jpg" alt="Rocket">
+        </div>
+      </div>
+    </footer>
 
   <script>
     const form = document.getElementById('contactForm');
